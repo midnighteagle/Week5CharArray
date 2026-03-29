@@ -46,11 +46,15 @@ bool isAnagram(string s, string t){
     // how to create a frequency table for String 
     int freqencyTable[256] ={0}; // create an array of size 256
     for(int i = 0; i < s.length(); i++){ // O(s)
-        freqencyTable[s[i]]++; // typeCasting. 
+        cout<<"Value Of Char: "<<s[i]<<" "<<"Frequency: "<<freqencyTable[s[i]]<<endl; 
+        freqencyTable[s[i]]++; // typeCasting.
+        cout<<"Value Of Char: "<<s[i]<<" "<<"Frequency: "<<freqencyTable[s[i]]<<endl; 
 
     }
     for(int i = 0; i < t.length(); i++){ //O(t)
+        cout<<"Value Of Char: "<<t[i]<<" "<<"Frequency: "<<freqencyTable[t[i]]<<endl;
         freqencyTable[t[i]]--; // typecasting.
+        cout<<"Value Of Char: "<<t[i]<<" "<<"Frequency: "<<freqencyTable[t[i]]<<endl;
     }
     for(int i = 0; i<256; i++){ //O(256)-> constant tc -> O(s+t)
         if (freqencyTable[i] != 0){
