@@ -1,3 +1,4 @@
+//Assume memory address of variable 'a' is : 200 and a double variable is of size 8 byte. what will be the output
 #include<iostream>
 using namespace std;
 int main(){

@@ -4,7 +4,7 @@ int main(){
     char arr[20];
     int i;
     for(int i = 0; i < 10; i++){
-        *(arr+i) = 65 + 1;
+        *(arr+i) = 65 + i;
     }
     *(arr + i) ='\0';//"\0 is a null character".
     cout << arr;
