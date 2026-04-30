@@ -38,8 +38,24 @@ s consists only of printable ASCII characters.
 //#include<cstring>
 using namespace std;
 
-
+    void toLowerCase(string &s){
+        for(int i = 0; i < s.length(); i++){
+            s[i] = tolower(s[i]);
+        }
+    }
+    void RemoveSpecialCharacter(string &s){
+        string result = "";
+        for(int i = 0; i < s.length(); i++){
+            if(isalnum(s[i])){
+                result += s[i];
+            }
+        }
+        s = result;
+    }
     bool isPalindrome(string &s) {
+        toLowerCase(s);
+        RemoveSpecialCharacter(s);
+        cout<<s<<endl;
         int len = s.length();
         int start = 0;
         int end = len - 1;

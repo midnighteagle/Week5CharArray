@@ -41,8 +41,46 @@ Follow-up: If the string data type is mutable in your language, can you solve it
 #include<iostream>
 using namespace std;
 string reversewords(string s){
-    
+    reverse(s.begin(), s.end());
+
+
+    int n = s.size();
+    int start = 0, end = 0;
+
+
+    for(int i = 0; i < n; i++){
+        // skip the leading space 
+        while(i < n && s[i] == ' '){
+            i++;
+        }
+
+        if(i == n ) break;  // out of bound cheak;
+
+
+        // copy the characters to the right position
+        while(i < n && s[i] != ' '){
+            s[end++] = s[i++];
+        }
+
+
+        // after copy... reverse the indivisual words
+        reverse (s.begin() + start , s.begin() + end);
+
+        // add the extra space between word
+        s[end++] = ' ';
+        start = end;
+    }
+
+
+    // resize the final string
+    s.resize(end-1);
+    return s;
+
+
 }
 int main(){
+    string s = "a good   example";
+    string result = reversewords(s);
+    cout<< "the final ans: "<<result<<endl;
     return 0;
 }
