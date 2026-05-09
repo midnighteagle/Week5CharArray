@@ -71,6 +71,7 @@ string convert(string s, int numRows) {
     string ans = "";
     for(int i = 0; i < zigzac.size(); i++){
         ans += zigzac[i];
+        cout<<zigzac[i]<<endl;
     }
     return ans;
 }
